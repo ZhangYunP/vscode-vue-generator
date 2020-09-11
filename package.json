@@ -1,0 +1,93 @@
+{
+  "name": "vue-generator",
+  "displayName": "Vue Generator",
+  "description": "A small extension that help you to create component's boilerplate",
+  "version": "0.0.1",
+  "publisher": "polo",
+  "author": {
+    "name": "polo",
+    "email": "zypolo91@gmail.com",
+    "url": "https://github.com/ZhangYunP"
+  },
+  "icon": "public/vue.jpg",
+  "bugs": {
+    "url": "https://github.com/ZhangYunP/vscode-vue-generator/issues",
+    "email": "zypolo91@gmail.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ZhangYunP/vscode-vue-generator"
+  },
+  "homepage": "https://github.com/ZhangYunP/vscode-vue-generator",
+  "engines": {
+    "vscode": "^1.45.0"
+  },
+  "keywords": [
+    "vue generator",
+    "create files",
+    "create folders"
+  ],
+  "categories": [
+    "Other"
+  ],
+  "galleryBanner": {
+    "color": "#563A8E",
+    "theme": "dark"
+  },
+  "activationEvents": [
+    "onCommand:vue-generator.generator-component",
+    "onCommand:vue-generator.generator-service",
+    "onCommand:vue-generator.generator-module"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "vue-generator.generator-component",
+        "title": "Vue Generator Component"
+      },
+      {
+        "command": "vue-generator.generator-service",
+        "title": "Vue Generator Service"
+      },
+      {
+        "command": "vue-generator.generator-module",
+        "title": "Vue Generator Module"
+      }
+    ],
+    "menus": {
+      "explorer/context": [
+        {
+          "command": "vue-generator.generator-component"
+        },
+        {
+          "command": "vue-generator.generator-service"
+        },
+        {
+          "command": "vue-generator.generator-module"
+        }
+      ]
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "lint": "eslint src --ext ts",
+    "watch": "tsc -watch -p ./",
+    "pretest": "npm run compile && npm run lint",
+    "test": "node ./out/test/runTest.js"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.45.0",
+    "@types/glob": "^7.1.1",
+    "@types/mocha": "^7.0.2",
+    "@types/node": "^13.11.0",
+    "eslint": "^6.8.0",
+    "@typescript-eslint/parser": "^2.30.0",
+    "@typescript-eslint/eslint-plugin": "^2.30.0",
+    "glob": "^7.1.6",
+    "mocha": "^7.1.2",
+    "typescript": "^3.8.3",
+    "vscode-test": "^1.3.0"
+  }
+}
