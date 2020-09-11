@@ -76,7 +76,7 @@ export const generateService = (file: vscode.Uri) => {
       const targetPath = path.join(dir, name);
 
       makeFileSync(
-        `${targetPath}/${name}.tsx`,
+        `${targetPath}/${name}.js`,
         serviceFile.replace(/{serviceName}/g, name)
       );
     });
