@@ -3,6 +3,7 @@ import * as fs from "fs";
 import * as path from "path";
 
 import { moduleFile } from "./text/module";
+import { pageFile } from "./text/page";
 import { componentFile } from "./text/component";
 import { serviceFile } from "./text/service";
 
@@ -54,6 +55,30 @@ export const generateComponent = (file: vscode.Uri) => {
       makeFileSync(
         `${dir}/${componentName}.vue`,
         componentFile.replace(/{componentName}/g, componentName)
+      );
+    });
+};
+
+export const generatePage = (file: vscode.Uri) => {
+  vscode.window
+    .showInputBox({
+      value: "",
+      prompt: "Page name",
+      ignoreFocusOut: true,
+      valueSelection: [-1, -1],
+    })
+    .then((name) => {
+      if (!name) {
+        return;
+      }
+
+      const pageName = name.charAt(0).toUpperCase() + name.slice(1);
+
+      const dir = findDir(file.fsPath);
+
+      makeFileSync(
+        `${dir}/${pageName}.vue`,
+        pageFile.replace(/{pageName}/g, pageName)
       );
     });
 };

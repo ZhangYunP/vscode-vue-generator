@@ -2,23 +2,19 @@
   "name": "vue-generator",
   "displayName": "Vue Generator",
   "description": "A small extension that help you to create component's boilerplate",
-  "version": "0.0.1",
-  "publisher": "polo",
+  "version": "0.0.3",
+  "publisher": "jxlstudio",
   "author": {
-    "name": "polo",
-    "email": "zypolo91@gmail.com",
-    "url": "https://github.com/ZhangYunP"
+    "name": "jxlstudio",
+    "email": "jeremy@jxl.io",
+    "url": "https://github.com/jxlstudio"
   },
   "icon": "public/vue.jpg",
-  "bugs": {
-    "url": "https://github.com/ZhangYunP/vscode-vue-generator/issues",
-    "email": "zypolo91@gmail.com"
-  },
   "repository": {
     "type": "git",
-    "url": "https://github.com/ZhangYunP/vscode-vue-generator"
+    "url": "https://github.com/jxlstudio/vscode-vue-generator"
   },
-  "homepage": "https://github.com/ZhangYunP/vscode-vue-generator",
+  "homepage": "https://github.com/jxlstudio/vscode-vue-generator",
   "engines": {
     "vscode": "^1.45.0"
   },
@@ -37,22 +33,27 @@
   "activationEvents": [
     "onCommand:vue-generator.generator-component",
     "onCommand:vue-generator.generator-service",
-    "onCommand:vue-generator.generator-module"
+    "onCommand:vue-generator.generator-module",
+    "onCommand:vue-generator.generator-page"
   ],
   "main": "./out/extension.js",
   "contributes": {
     "commands": [
       {
         "command": "vue-generator.generator-component",
-        "title": "Vue Generator Component"
+        "title": "Create Vue Component"
       },
       {
         "command": "vue-generator.generator-service",
-        "title": "Vue Generator Service"
+        "title": "Create Vue Service"
       },
       {
         "command": "vue-generator.generator-module",
-        "title": "Vue Generator Module"
+        "title": "Create Vue Module"
+      },
+      {
+        "command": "vue-generator.generator-page",
+        "title": "Create Gridsome Page"
       }
     ],
     "menus": {
@@ -65,6 +66,9 @@
         },
         {
           "command": "vue-generator.generator-module"
+        },
+        {
+          "command": "vue-generator.generator-page"
         }
       ]
     }
